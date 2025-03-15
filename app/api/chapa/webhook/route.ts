@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createEnrollment } from "@/sanity/lib/student/createEnrollment";
 import getCourseById from "@/sanity/lib/courses/getCourseById";
-import { clerkClient } from "@clerk/nextjs/server";
 import crypto from "crypto";
 
 const CHAPA_API_KEY = process.env.CHAPA_API_KEY;
@@ -65,10 +64,8 @@ export async function POST(req: Request) {
     }
 
     // Extract necessary data
-    const { email, first_name, last_name, phone_number } = verifyResult.data;
     const courseId = tx_ref.split("_")[1];
     const userId =tx_ref.split("_")[2];
-    const userEmail = email;
 
     console.log("tx_ref ", tx_ref);
     console.log("Course ID:", courseId);
