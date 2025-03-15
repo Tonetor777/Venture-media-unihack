@@ -1,7 +1,7 @@
 "use client";
 
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { BookMarkedIcon, BookOpen, HomeIcon } from "lucide-react";
+import { BookMarkedIcon, HomeIcon } from "lucide-react";
 import Link from "next/link";
 import { SearchInput } from "./SearchInput";
 import { Button } from "./ui/button";
