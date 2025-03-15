@@ -208,7 +208,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
   return (
     <>
       {/* Thin Mobile Sidebar */}
-      <aside className="fixed inset-y-0 left-0 z-50 flex flex-col items-center w-[60px] border-r bg-background lg:hidden py-4 gap-y-4">
+      <aside className="fixed inset-y-0 left-0 z-50 flex flex-col items-center w-[40px] border-r bg-background lg:hidden py-4 gap-y-4">
         <TooltipProvider delayDuration={0}>
           <Tooltip>
             <TooltipTrigger asChild>

@@ -1,6 +1,7 @@
 "use client";
 
-import { createStripeCheckout } from "@/actions/createStripeCheckout";
+import { createChapaCheckout } from "@/actions/createChapaCheckout";
+// import { createStripeCheckout } from "@/actions/createStripeCheckout";
 import { useUser } from "@clerk/nextjs";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -24,7 +25,7 @@ function EnrollButton({
         const userId = user?.id;
         if (!userId) return;
 
-        const { url } = await createStripeCheckout(courseId, userId);
+        const { url } = await createChapaCheckout(courseId, userId);
         if (url) {
           router.push(url);
         }

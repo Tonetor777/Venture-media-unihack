@@ -13,10 +13,10 @@ import {
 
 interface CourseCardProps {
   course:
-    | GetCoursesQueryResult[number]
-    | NonNullable<
-        NonNullable<GetEnrolledCoursesQueryResult>["enrolledCourses"][number]["course"]
-      >;
+  | GetCoursesQueryResult[number]
+  | NonNullable<
+    NonNullable<GetEnrolledCoursesQueryResult>["enrolledCourses"][number]["course"]
+  >;
   progress?: number;
   href: string;
 }
@@ -51,9 +51,11 @@ export function CourseCard({ course, progress, href }: CourseCardProps) {
               <span className="text-white font-bold px-3 py-1 bg-black/50 dark:bg-white/20 rounded-full backdrop-blur-sm">
                 {course.price === 0
                   ? "Free"
-                  : `$${course.price.toLocaleString("en-US", {
-                      minimumFractionDigits: 2,
-                    })}`}
+                  : new Intl.NumberFormat("en-ET", {
+                    style: "currency",
+                    currency: "ETB",
+                    minimumFractionDigits: 2,
+                  }).format(course.price)}
               </span>
             )}
           </div>
