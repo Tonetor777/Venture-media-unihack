@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
+import ClientComponent from "@/components/ClientComponent";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -44,6 +46,8 @@ export default async function RootLayout({
           >
 
           {children}
+
+          <ClientComponent />
         </ThemeProvider>
       </body>
     </html>
