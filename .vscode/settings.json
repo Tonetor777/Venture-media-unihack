@@ -1,0 +1,11 @@
+{
+    "go.goroot": "/home/oddegen/snap/code/187/.local/share/mise/installs/go/1.23.0",
+    "debug.javascript.defaultRuntimeExecutable": {
+        "pwa-node": "/home/oddegen/snap/code/187/.local/share/mise/shims/node"
+    },
+    "python.defaultInterpreterPath": "/home/oddegen/snap/code/187/.local/share/mise/installs/python/3.12.5/bin/python",
+    "go.alternateTools": {
+        "go": "/home/oddegen/snap/code/187/.local/share/mise/shims/go",
+        "dlv": "/home/oddegen/snap/code/185/.local/share/mise/shims/dlv"
+    }
+}
