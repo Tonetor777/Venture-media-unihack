@@ -63,7 +63,7 @@ export function LessonCompleteButton({
   const isLoading = isCompleted === null || isPendingTransition;
 
   return (
-    <div className=" bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-sm border-t z-50">
+    <div className=" bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-sm border-t z-30">
       <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
         <div className="flex-1">
           <p className="hidden md:block text-sm font-medium">
