@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { getLessonById } from "@/sanity/lib/lessons/getLessonById";
 import { PortableText } from "@portabletext/react";
 import { LoomEmbed } from "@/components/LoomEmbed";
@@ -15,7 +15,8 @@ interface LessonPageProps {
 }
 
 export default async function LessonPage({ params }: LessonPageProps) {
-  const user = await currentUser();
+  const { userId } = await auth();
+
   const { courseId, lessonId } = await params;
 
   const lesson = await getLessonById(lessonId);
@@ -53,7 +54,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
               )}
 
               <div className="flex justify-end">
-                <LessonCompleteButton lessonId={lesson._id} clerkId={user!.id} />
+                <LessonCompleteButton lessonId={lesson._id} clerkId={userId!} />
               </div>
             </div>
           </div>

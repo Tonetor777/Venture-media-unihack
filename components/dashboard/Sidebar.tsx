@@ -134,7 +134,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                       {String(moduleIndex + 1).padStart(2, "0")}
                     </span>
                     <div className="flex flex-col gap-y-1 text-left flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">
+                      <p className="text-sm font-medium">
                         {module.title}
                       </p>
                       <p className="text-xs text-muted-foreground">
