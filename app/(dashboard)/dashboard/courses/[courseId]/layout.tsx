@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs/server";
 import getCourseById from "@/sanity/lib/courses/getCourseById";
-import { Sidebar } from "@/components/dashboard/Sidebar";
 import { getCourseProgress } from "@/sanity/lib/lessons/getCourseProgress";
 import { checkCourseAccess } from "@/lib/auth";
+import { AppSidebar } from "@/components/dashboard/AppSidebar";
 
 interface CourseLayoutProps {
   children: React.ReactNode;
@@ -39,7 +39,8 @@ export default async function CourseLayout({
 
   return (
     <div className="h-full">
-      <Sidebar course={course} completedLessons={progress.completedLessons} />
+      <AppSidebar course={course} completedLessons={progress.completedLessons} />
+      {/* <Sidebar course={course} completedLessons={progress.completedLessons} /> */}
       <main className="h-full lg:pt-[64px] pl-10 lg:pl-96">{children}</main>
     </div>
   );

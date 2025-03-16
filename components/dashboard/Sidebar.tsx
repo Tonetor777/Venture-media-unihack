@@ -111,7 +111,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
           />
         </div>
       </div>
-      <ScrollArea className="flex-1">
+      <ScrollArea>
         <div className="p-2 lg:p-4">
           <Accordion
             type="multiple"
@@ -184,7 +184,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
                             className={cn(
                               "text-sm line-clamp-2 min-w-0",
                               isCompleted &&
-                                "text-muted-foreground line-through decoration-green-500/50"
+                              "text-muted-foreground line-through decoration-green-500/50"
                             )}
                           >
                             {lesson.title}
@@ -256,9 +256,7 @@ export function Sidebar({ course, completedLessons = [] }: SidebarProps) {
             : "translate-x-[-100%] lg:translate-x-0"
         )}
       >
-        <div className="h-full">
-          <SidebarContent />
-        </div>
+        <SidebarContent />
       </aside>
 
       {/* Overlay for mobile */}
