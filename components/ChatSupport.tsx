@@ -45,7 +45,7 @@ export default function ChatSupport() {
                             {message.parts.map((part, index) => {
                                 switch (part.type) {
                                     case 'text':
-                                        return <ChatBubbleMessage key={index}>{part.text}</ChatBubbleMessage>
+                                        return <ChatBubbleMessage key={index} layout={message.role == "user" ? "default" : "ai"}>{part.text}</ChatBubbleMessage>
                                 }
                             })}
                         </ChatBubble>
